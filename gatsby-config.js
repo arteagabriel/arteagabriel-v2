@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Gabriel Arteaga',
@@ -31,6 +35,17 @@ module.exports = {
       resolve: 'gatsby-plugin-layout',
       options: {
         component: require.resolve('./src/components/Layout.js')
+      }
+    },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: process.env.WP_BASE_URL,
+        protocol: 'https',
+        useACF: true,
+        acfOptionPageIds: [
+          'site_general_settings'
+        ],
       }
     },
   ],
