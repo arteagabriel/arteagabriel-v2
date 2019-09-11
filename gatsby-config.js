@@ -54,5 +54,13 @@ module.exports = {
         displayName: process.env.NODE_ENV === 'development'
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
+    }
   ],
 }

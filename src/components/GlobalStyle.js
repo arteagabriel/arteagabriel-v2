@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { rem } from 'polished';
 
 export const theme = {
   primary: '#0044e3',
@@ -16,6 +17,8 @@ export const theme = {
   fontWeightBold: 700,
   fontWeightExtrabold: 800,
   fontWeightBlack: 900,
+  spacer: rem(16),
+  spacerLg: rem(24),
 };
 
 const fontSizeBaseValue = 16;
@@ -115,7 +118,7 @@ export default createGlobalStyle`
     /* Link */
     --link-color: ${theme.dark};
     --link-decoration: underline;
-    --link-hover-color: $theme.primary};
+    --link-hover-color: ${theme.primary};
     --link-hover-decoration: underline;
 
     /* Table */
